@@ -5,10 +5,7 @@ metadata:
   name: {{ include "minecraft-bedrock-server.fullname" . }}-configmap
   labels:
     {{- include "minecraft-bedrock-server.labels" . | nindent 4 }}
+{{- with .Values.configMap }}
 data:
-{{- if .Values.configMap.data }}
-{{ toYaml .Values.ConfigMap.data | nindent 2 }}
-{{- else }}
-  # Default inline data if .Values.Configmap.data is not provided
-  EULA: "TRUE" 
+  {{- toYaml . | nindent 2 }}
 {{- end }}

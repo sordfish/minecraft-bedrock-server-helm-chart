@@ -132,4 +132,5 @@ tolerations: []
 affinity: {}
 
 configMap:
-  data: {}
+  data:
+    EULA: "TRUE"
