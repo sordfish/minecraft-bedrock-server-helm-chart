@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: minecraft-bedrock-server-pvc
+  name: {{ include "minecraft-bedrock-server.fullname" . }}-pvc
   labels:
     {{- include "minecraft-bedrock-server.labels" . | nindent 4 }}
 spec:

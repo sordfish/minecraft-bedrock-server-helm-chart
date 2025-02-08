@@ -2,31 +2,13 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ include "minecraft-bedrock-server.fullname" . }}minecraft-bedrock-configmap
+  name: {{ include "minecraft-bedrock-server.fullname" . }}-configmap
   labels:
     {{- include "minecraft-bedrock-server.labels" . | nindent 4 }}
 data:
-  # Find more options at https://github.com/itzg/docker-minecraft-bedrock-server#server-properties
-  # Remove # from in front of line if changing from default values.
-  EULA: "TRUE" # Must accept EULA to use this minecraft server
-  #GAMEMODE: "survival" # Options: survival, creative, adventure
-  #DIFFICULTY: "easy" # Options: peaceful, easy, normal, hard
-  #DEFAULT_PLAYER_PERMISSION_LEVEL: "member" # Options: visitor, member, operator
-  #LEVEL_NAME: "my_minecraft_world"
-  #LEVEL_SEED: "33480944"
-  #SERVER_NAME: "my_minecraft_server"
-  #SERVER_PORT: "19132"
-  #LEVEL_TYPE: "DEFAULT" # Options: FLAT, LEGACY, DEFAULT
-  #ALLOW_CHEATS: "false" # Options: true, false
-  #MAX_PLAYERS: "10"
-  #PLAYER_IDLE_TIMEOUT: "30"
-  #TEXTUREPACK_REQUIRED: "false" # Options: true, false
-  #
-  ## Changing these will have a security impact
-  #ONLINE_MODE: "true" # Options: true, false (removes Xbox Live account requirements)
-  #WHITE_LIST: "false" # If enabled, need to provide a whitelist.json by your own means. 
-  #
-  ## Changing these will have a performance impact
-  #VIEW_DISTANCE: "10"
-  #TICK_DISTANCE: "4"
-  #MAX_THREADS: "8"
+{{- if .Values.configMap.data }}
+{{ toYaml .Values.ConfigMap.data | nindent 2 }}
+{{- else }}
+  # Default inline data if .Values.Configmap.data is not provided
+  EULA: "TRUE" 
+{{- end }}
