@@ -38,7 +38,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           envFrom:
             - configMapRef:
-                name: {{ include "minecraft-bedrock-server.fullname" . }}minecraft-bedrock-configmap
+                name: {{ include "minecraft-bedrock-server.fullname" . }}-configmap
           ports:
             - name: bedrock
               containerPort: {{ .Values.service.port }}
