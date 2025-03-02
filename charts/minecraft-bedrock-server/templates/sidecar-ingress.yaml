@@ -35,9 +35,9 @@ spec:
             {{- end }}
             backend:
               service:
-                name: {{ include "minecraft-bedrock-server.fullname" $ }}
+                name: {{ include "minecraft-bedrock-server.fullname" $ }}-sidecar
                 port:
-                  number: {{ $.Values.service.port }}
+                  number: {{ $.Values.sidecar.service.port }}
           {{- end }}
     {{- end }}
 {{- end }}
