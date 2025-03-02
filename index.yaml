@@ -3,6 +3,16 @@ entries:
   minecraft-bedrock-server:
   - apiVersion: v2
     appVersion: 2024.11.0
+    created: "2025-03-02T00:20:00.930039563Z"
+    description: A Helm chart for Kubernetes
+    digest: 86244ed653fbe0c07fd0f21ec0b6c074a77ef45de22180d7a2909ea9f464b9e8
+    name: minecraft-bedrock-server
+    type: application
+    urls:
+    - https://github.com/sordfish/minecraft-bedrock-server-helm-chart/releases/download/minecraft-bedrock-server-0.2.1/minecraft-bedrock-server-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v2
+    appVersion: 2024.11.0
     created: "2025-03-02T00:09:13.181946531Z"
     description: A Helm chart for Kubernetes
     digest: a1e409629e42af70271f49770235a7acb196f353a7c709097898974716a0d942
@@ -61,4 +71,4 @@ entries:
     urls:
     - https://github.com/sordfish/minecraft-bedrock-server-helm-chart/releases/download/minecraft-bedrock-server-0.1.1/minecraft-bedrock-server-0.1.1.tgz
     version: 0.1.1
-generated: "2025-03-02T00:09:13.18197801Z"
+generated: "2025-03-02T00:20:00.930066173Z"
