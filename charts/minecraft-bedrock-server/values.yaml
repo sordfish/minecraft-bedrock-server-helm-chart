@@ -117,7 +117,7 @@ volumeMounts: []
 #   - mountPath: "/data"
 #     name: "minecraft-bedrock-server-data"
 
-persistance:
+persistence:
   config:
     enabled: false
     size: 10Gi
